@@ -1,28 +1,23 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:flutter_sample/Screen/Home/Payment/PaymentAmount.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_sample/Screen/Merchant/MerchantScreen.dart';
+import 'package:flutter_sample/Screen/Tabbar/Tabbar.dart';
+import '../Components/app_card.dart';
 import '../GlobalConst/GlobalConst.dart';
+import 'AdminScreen.dart';
 
-import '../Admin/AdminScreen.dart';
-import '../Dashboard/Dashboard.dart';
-import '../Merchant/MerchantScreen.dart';
-import '../Tabbar/Tabbar.dart';
-import '../Home/Payment/PaymentAmount.dart';
-import '../Home/Payment/InsertcardScreen.dart';
-
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class Configure_IP_Address extends StatefulWidget {
+  const Configure_IP_Address({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<Configure_IP_Address> createState() => _Configure_IP_AddressState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _Configure_IP_AddressState extends State<Configure_IP_Address> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        resizeToAvoidBottomInset: false,
         appBar: AppBar(
           title: Image.asset('assets/images/logo_name.png', fit: BoxFit.cover),
         ),
@@ -42,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
         body: Column(children: [
           Text(
-            HOME,
+            Configure_IP,
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
@@ -50,7 +45,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           Expanded(
             child: GridView.count(
-                //controller: ScrollController(),
                 crossAxisCount: 2,
                 crossAxisSpacing: 0,
                 mainAxisSpacing: 0,
@@ -67,13 +61,13 @@ class _HomeScreenState extends State<HomeScreen> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => PaymentAmount()));
+                                    builder: (context) => Tabbar()));
                           },
                           child: Column(children: <Widget>[
-                            Image.asset('assets/images/PaymentIcon.png',
+                            Image.asset('assets/images/Configure_TMS_IP.png',
                                 height: 100, width: 50, fit: BoxFit.contain),
                             Text(
-                              Payment,
+                              Configure_TMS,
                               style: TextStyle(
                                   fontSize: 20.0, color: Colors.white),
                               textAlign: TextAlign.center,
@@ -94,13 +88,13 @@ class _HomeScreenState extends State<HomeScreen> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => PaymentAmount()));
+                                  builder: (context) => MerchantScreen()));
                         },
                         child: Column(children: <Widget>[
-                          Image.asset('assets/images/RefundIcon.png',
+                          Image.asset('assets/images/View_TMS_IP.png',
                               height: 100, width: 50, fit: BoxFit.contain),
                           Text(
-                            Refund,
+                            View_TMS,
                             style:
                                 TextStyle(fontSize: 20.0, color: Colors.white),
                             textAlign: TextAlign.center,
@@ -120,49 +114,18 @@ class _HomeScreenState extends State<HomeScreen> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => PaymentAmount()));
+                                  builder: (context) => AdminScreen()));
                         },
                         child: Column(
                           children: <Widget>[
-                            Image.asset('assets/images/CancellationIcon.png',
+                            Image.asset('assets/images/View_Acquirer_IP.png',
                                 height: 100, width: 50, fit: BoxFit.contain),
                             Text(
-                              Cancellation,
+                              View_Acquirer,
                               style: TextStyle(
                                   fontSize: 20.0, color: Colors.white),
                               textAlign: TextAlign.center,
                             ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8),
-                    child: Card(
-                      color: Colors.blue,
-                      child: GestureDetector(
-                        onTap: () {
-                          //Navigator.pushReplacementNamed(context, "HomeScreen");
-
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => PaymentAmount()));
-                        },
-                        child: Column(
-                          children: <Widget>[
-                            Image.asset('assets/images/RecieptPrintIcon.png',
-                                height: 100, width: 50, fit: BoxFit.contain),
-                            //Padding(
-                            //padding: const EdgeInsets.fromLTRB(0, 0, 0, 20.0),
-                            Text(
-                              Duplicate_Receipt,
-                              style: TextStyle(
-                                  fontSize: 20.0, color: Colors.white),
-                              textAlign: TextAlign.center,
-                            ),
-                            //),
                           ],
                         ),
                       ),

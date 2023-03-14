@@ -1,0 +1,34 @@
+// import 'package:/flutter_sample/Screen/GlobalConst/GlobalConst.dart'
+//     as Constants;
+import '../Dashboard/Dashboard.dart';
+import '../Home/Payment/PaymentAmount.dart';
+import '../GlobalConst/GlobalConst.dart' as Constants;
+
+const String DASHBOARD = "DASHBOARD";
+const String Home = "Home";
+const String Merchant = "Merchant";
+const String Admin = "Admin";
+const String ADMIN = "ADMIN";
+const String Parameter = "Parameter Download";
+const String Certificate = "Certificate Download";
+const String Configure_IP = "Configure IP Address";
+const String Configure_Terminal = "Configure Terminal";
+const String Print_Configuration = "Print Configuration";
+const String MERCHANT = "MERCHANT";
+const String Summary_Report = "Summary Report";
+const String Detailed_Report = "Detailed Report";
+const String Transactions_History = "Transactions History";
+const String Perform_Settlement = "Perform Settlement";
+const String Perform_Diagnostics = "Perform Diagnostics";
+const String Change_Settings = "Change Settings";
+const String HOME = "HOME";
+const String Payment = "Payment";
+const String Cancellation = "Cancellation";
+const String Refund = "Refund";
+const String Duplicate_Receipt = "Print\nDuplicate Receipt";
+const String Configure_TMS = "Configure\nTMS IP";
+const String View_TMS = "View\nTMS IP";
+const String View_Acquirer = "View Acquirer\nIP";
+const String PAYMENT_AMOUNT = "PAYMENT AMOUNT";
+const String Please_Login = "Please Login to Use Services";
+const String PROCEED = "PROCEED";
