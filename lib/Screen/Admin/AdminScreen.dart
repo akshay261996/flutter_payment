@@ -1,24 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:flutter_sample/Screen/Home/Payment/PaymentAmount.dart';
+import 'package:flutter_sample/Screen/Admin/Configure_IP_Address.dart';
+import 'package:flutter_sample/Screen/Dashboard/Dashboard.dart';
 import '../GlobalConst/GlobalConst.dart';
 
-import '../Admin/AdminScreen.dart';
-import '../Dashboard/Dashboard.dart';
 import '../Merchant/MerchantScreen.dart';
 import '../Tabbar/Tabbar.dart';
-import '../Home/Payment/PaymentAmount.dart';
-import '../Home/Payment/InsertcardScreen.dart';
+import 'Configure_IP_Address.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class AdminScreen extends StatefulWidget {
+  const AdminScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<AdminScreen> createState() => _AdminScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _AdminScreenState extends State<AdminScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
         body: Column(children: [
           Text(
-            HOME,
+            ADMIN,
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
@@ -50,7 +48,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           Expanded(
             child: GridView.count(
-                //controller: ScrollController(),
                 crossAxisCount: 2,
                 crossAxisSpacing: 0,
                 mainAxisSpacing: 0,
@@ -67,15 +64,17 @@ class _HomeScreenState extends State<HomeScreen> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => PaymentAmount()));
+                                    builder: (context) => Tabbar()));
                           },
                           child: Column(children: <Widget>[
-                            Image.asset('assets/images/PaymentIcon.png',
+                            Image.asset('assets/images/parameter.png',
                                 height: 100, width: 50, fit: BoxFit.contain),
                             Text(
-                              Payment,
+                              Parameter,
                               style: TextStyle(
-                                  fontSize: 20.0, color: Colors.white),
+                                fontSize: 20.0,
+                                color: Colors.white,
+                              ),
                               textAlign: TextAlign.center,
                             ),
                           ]),
@@ -94,13 +93,17 @@ class _HomeScreenState extends State<HomeScreen> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => PaymentAmount()));
+                                  builder: (context) => MerchantScreen()));
                         },
                         child: Column(children: <Widget>[
-                          Image.asset('assets/images/RefundIcon.png',
-                              height: 100, width: 50, fit: BoxFit.contain),
+                          Image.asset('assets/images/Certificatedownload.png',
+                              //height: MediaQuery.of(context).size.height * 0.1,
+                              //width: 0.1,
+                              height: 100,
+                              width: 50,
+                              fit: BoxFit.contain),
                           Text(
-                            Refund,
+                            Certificate,
                             style:
                                 TextStyle(fontSize: 20.0, color: Colors.white),
                             textAlign: TextAlign.center,
@@ -120,14 +123,15 @@ class _HomeScreenState extends State<HomeScreen> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => PaymentAmount()));
+                                  builder: (context) =>
+                                      Configure_IP_Address()));
                         },
                         child: Column(
                           children: <Widget>[
-                            Image.asset('assets/images/CancellationIcon.png',
+                            Image.asset('assets/images/ConfigureIP.png',
                                 height: 100, width: 50, fit: BoxFit.contain),
                             Text(
-                              Cancellation,
+                              Configure_IP,
                               style: TextStyle(
                                   fontSize: 20.0, color: Colors.white),
                               textAlign: TextAlign.center,
@@ -148,21 +152,46 @@ class _HomeScreenState extends State<HomeScreen> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => PaymentAmount()));
+                                  builder: (context) => AdminScreen()));
                         },
                         child: Column(
                           children: <Widget>[
-                            Image.asset('assets/images/RecieptPrintIcon.png',
+                            Image.asset('assets/images/Configureterminal.png',
                                 height: 100, width: 50, fit: BoxFit.contain),
-                            //Padding(
-                            //padding: const EdgeInsets.fromLTRB(0, 0, 0, 20.0),
                             Text(
-                              Duplicate_Receipt,
+                              Configure_Terminal,
                               style: TextStyle(
                                   fontSize: 20.0, color: Colors.white),
                               textAlign: TextAlign.center,
                             ),
-                            //),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: Card(
+                      color: Colors.blue,
+                      child: GestureDetector(
+                        onTap: () {
+                          //Navigator.pushReplacementNamed(context, "HomeScreen");
+
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => AdminScreen()));
+                        },
+                        child: Column(
+                          children: <Widget>[
+                            Image.asset('assets/images/Printconfig.png',
+                                height: 100, width: 50, fit: BoxFit.contain),
+                            Text(
+                              Print_Configuration,
+                              style: TextStyle(
+                                  fontSize: 20.0, color: Colors.white),
+                              textAlign: TextAlign.center,
+                            ),
                           ],
                         ),
                       ),
